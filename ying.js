@@ -1,9 +1,13 @@
 (function(){
     'use strict';
-    var yin = "[陻音阴愔慇瘖磤禋欭殷氤洇姻喑噾因堙骃溵湮濦絪緸茵荫裀諲闉]",
-        ying = "[韺瑛锳璎撄孾柍樱嫈媖婴啨应鹦鹰瀴缨罂膺莺英荥蘡蠳譍譻賏]",
-        ying_reg = RegExp(ying,"g"),
-        yin_reg = RegExp(yin,"g");
+    var yin = "陻音阴愔慇瘖磤禋欭殷氤洇姻喑噾因堙骃溵湮濦絪緸茵荫裀諲闉",
+        yin_2 = "霪银夤訚狺峾崟寅婬犾唫嚚圻垠冘吟龈龂淫蟫訔誾鄞",
+        yin_4 = "隐窨慭懚梀廕印胤酳",
+        ying = "韺瑛锳璎撄孾柍樱嫈媖婴啨应鹦鹰瀴缨罂膺莺英荥蘡蠳譍譻賏",
+        ying_2 = "盈禜籯桯楹浧嬴莹滢潆濙濚瀛瀯茔荧萤萦营蝇謍赢迎",
+        ying_4 = "硬映媵",
+        ying_reg = RegExp("[" + ying + ying_2 + ying_4 + "]","g"),
+        yin_reg = RegExp("[" + yin + yin_2 + yin_4 + "]","g");
     
     onload = function()
     {
