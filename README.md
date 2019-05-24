@@ -22,13 +22,11 @@
 <link rel="stylesheet" type="text/css" href="ying.css" >
 ```
 
-<<<<<<< HEAD
 PS: 鼠标移动到字上面，会自动还原成原本的字
 PS*2: 在使用用户脚本的时候请一定要注意复制的内容！
-=======
+
 ### User Script
 
 使用Tampermonkey等类似物载入即可
 
 PS:鼠标移动到字上面，会自动还原成原本的字
->>>>>>> 99ffef0060daf78c2e8df772f24e7d0179aa73e1
