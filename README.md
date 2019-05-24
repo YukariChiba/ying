@@ -12,7 +12,7 @@
 ## 使用
 
 ```html
-<script src="ying.js"></script>
+<script src="ying.js" defer="defer"></script>
 <link rel="stylesheet" type="text/css" href="ying.css" >
 ```
 
