@@ -1,0 +1,6 @@
+ying::after {
+    content: "嘤";
+}
+ying:hover::after {
+    content: attr(ori);
+}
