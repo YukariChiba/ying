@@ -6,8 +6,8 @@
         ying = "韺瑛锳璎撄孾柍樱嫈媖婴啨应鹦鹰瀴缨罂膺莺英荥蘡蠳譍譻賏",
         ying_2 = "盈禜籯桯楹浧嬴莹滢潆濙濚瀛瀯茔荧萤萦营蝇謍赢迎",
         ying_4 = "硬映媵",
-        ying_reg = RegExp("(?=[^>]*)[" + ying + ying_2 + ying_4 + "](?=[^>]*)","g"),
-        yin_reg = RegExp("(?=[^>]*)[" + yin + yin_2 + yin_4 + "](?=[^>]*)","g");
+        ying_reg = RegExp("(?<=(^|>)[^<]*)[" + ying + ying_2 + ying_4 + "](?=[^>]*)","g"),
+        yin_reg = RegExp("(?<=(^|>)[^<]*)[" + yin + yin_2 + yin_4 + "](?=[^>]*)","g");
 
     onload = function()
     {
