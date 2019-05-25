@@ -23,11 +23,8 @@ GM_addStyle("ying::after { content: \"嘤\"; } ying:hover::after { content: attr
         ying_reg = RegExp("(?<=(^|>)[^<]*)[" + ying + ying_2 + ying_4 + "](?=[^>]*)","g"),
         yin_reg = RegExp("(?<=(^|>)[^<]*)[" + yin + yin_2 + yin_4 + "](?=[^>]*)","g");
 
-    onload = function()
-    {
         var eles = document.body.innerHTML;
         eles = eles.replace(ying_reg, "<ying ori=\"$&\" class=\"ying\"></ying>");
         eles = eles.replace(yin_reg, "<ying ori=\"$&\" class=\"ying\"></ying>");
         document.body.innerHTML = eles;
-    }
 }());
