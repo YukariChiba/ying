@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YingYingYing
 // @namespace    https://github.com/SteveCharlesYang/ying
-// @version      0.1.3
+// @version      0.1.4
 // @description  Replace Yings in Chinese
 // @author       Charles Yang
 // @updateURL    https://raw.githubusercontent.com/SteveCharlesYang/ying/master/ying.user.js
