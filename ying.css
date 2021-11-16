@@ -1,6 +1,6 @@
 ying::after {
-    content: "嘤";
+  content: "嘤";
 }
 ying:hover::after {
-    content: attr(ori);
+  content: attr(ori);
 }
