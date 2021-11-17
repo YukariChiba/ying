@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YingYingYing
 // @namespace    https://github.com/YukariChiba/ying
-// @version      0.2.0
+// @version      0.2.1
 // @description  Replace Yings in Chinese
 // @author       Yukari Chiba
 // @updateURL    https://raw.githubusercontent.com/YukariChiba/ying/master/ying.user.js
@@ -14,7 +14,16 @@ GM_addStyle(
   'ying::after { content: "嘤"; } ying:hover::after { content: attr(ori); } '
 );
 
-function regex_replace(base, child) {
+(function () {
+  "use strict";
+
+  try {
+    new Function("");
+  } catch (e) {
+    console.log("[YingYingYing] CSP is enabled. Turn off plugin.");
+    return;
+  }
+
   var yin = "陻音阴愔慇瘖磤禋欭殷氤洇姻喑噾因堙骃溵湮濦絪緸茵荫裀諲闉",
     yin_2 = "霪银夤訚狺峾崟寅婬犾唫嚚圻垠冘吟龈龂淫蟫訔誾鄞",
     yin_4 = "隐窨慭懚梀廕印胤酳",
@@ -29,26 +38,29 @@ function regex_replace(base, child) {
       "(?<=(^|>)[^<]*)[" + yin + yin_2 + yin_4 + "](?=[^>]*)",
       "g"
     );
-  if (ying_reg.test(child.textContent) || yin_reg.test(child.textContent)) {
-    base.innerHTML = base.innerHTML
-      .replace(ying_reg, '<ying ori="$&" class="ying"></ying>')
-      .replace(yin_reg, '<ying ori="$&" class="ying"></ying>');
-  }
-}
 
-function iter(nodes) {
-  for (var i = 0, n = nodes.childNodes.length; i < n; i++) {
-    if (nodes.childNodes[i].nodeType == 3) {
-      regex_replace(nodes, nodes.childNodes[i]);
-    }
-    if (nodes.childNodes[i].childNodes.length != 0) {
-      iter(nodes.childNodes[i]);
+  function regex_replace(base, child) {
+    if (ying_reg.test(child.textContent) || yin_reg.test(child.textContent)) {
+      base.innerHTML = base.innerHTML
+        .replace(ying_reg, '<ying ori="$&" class="ying"></ying>')
+        .replace(yin_reg, '<ying ori="$&" class="ying"></ying>');
+      return true;
+    } else return false;
+  }
+
+  function iter(nodes) {
+    if (ying_reg.test(nodes.innerHTML) || yin_reg.test(nodes.innerHTML)) {
+      var replaced = false;
+      for (var i = 0, n = nodes.childNodes.length; i < n; i++) {
+        if (nodes.childNodes[i].nodeType == 3 || replaced) {
+          if (regex_replace(nodes, nodes.childNodes[i])) replaced = true;
+        }
+        if (nodes.childNodes[i].childNodes.length != 0) {
+          iter(nodes.childNodes[i]);
+        }
+      }
     }
   }
-}
 
-(function () {
-  "use strict";
-  var eles = document.body;
-  iter(eles);
+  iter(document.body);
 })();
