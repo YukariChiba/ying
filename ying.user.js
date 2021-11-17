@@ -53,7 +53,7 @@ GM_addStyle(
     if (ying_reg.test(nodes.innerHTML) || yin_reg.test(nodes.innerHTML)) {
       var replaced = false;
       for (var i = 0, n = nodes.childNodes.length; i < n; i++) {
-        if (nodes.childNodes[i].nodeType == 3 || replaced) {
+        if (nodes.childNodes[i].nodeType == 3 || !replaced) {
           if (regex_replace(nodes, nodes.childNodes[i])) replaced = true;
         }
         if (nodes.childNodes[i].childNodes.length != 0) {
