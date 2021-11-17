@@ -8,6 +8,7 @@
 // @downloadURL  https://raw.githubusercontent.com/YukariChiba/ying/master/ying.user.js
 // @match        http*://*/*
 // @grant        GM_addStyle
+// @run-at       document-idle
 // ==/UserScript==
 
 GM_addStyle(
